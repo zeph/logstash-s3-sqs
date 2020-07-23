@@ -1,3 +1,4 @@
 FROM logstash:7.8.0
-RUN bin/logstash-plugin install --version 2.0.9 logstash-input-s3-sns-sqs
+COPY logstash-input-s3-sns-sqs-2.1.2.gem .
+RUN bin/logstash-plugin install ./logstash-input-s3-sns-sqs-2.1.2.gem
 RUN bin/logstash-plugin install logstash-output-amazon_es
